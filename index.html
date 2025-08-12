@@ -3,67 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0f1220">
+<meta name="theme-color" content="#d32f2f">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" sizes="192x192" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>플라톤 독서 루틴 · 4시간 사이클</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>독서 사이클링 · 레드 테마</title>
 <style>
-:root{
-  --bg:#0f1220; --fg:#e8eaf2; --muted:#9aa3b2; --card:#171b2d; --acc:#7aa2ff; --acc2:#59d0a7; --danger:#ff6b6b;
-  --ok:#7ddc83; --border:#27304a;
-}
-@media (prefers-color-scheme: light){
-  :root{ --bg:#f7f8fb; --fg:#101321; --muted:#5c6473; --card:#ffffff; --acc:#3b6af5; --acc2:#12b886; --danger:#d64045; --ok:#2f9e44; --border:#e5e7ef;}
-}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,sans-serif}
+:root{ --bg:#1a0f10; --fg:#f6ecec; --muted:#d2bcbc; --card:#231416;
+--acc:#e53935; --acc2:#ff6b6b; --danger:#ff6b6b; --ok:#7ddc83; --border:#3a2022; }
+@media (prefers-color-scheme: light){ :root{ --bg:#fff6f6; --fg:#241617; --muted:#6b4c4f; --card:#ffffff; --acc:#d32f2f; --acc2:#ff6b6b; --danger:#d64045; --ok:#2f9e44; --border:#f0dada; } }
+*{box-sizing:border-box} html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,sans-serif}
 .container{max-width:960px;margin:0 auto;padding:18px}
 h1{font-weight:800;letter-spacing:-0.2px;font-size:1.6rem;margin:8px 0 14px}
 .header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
-.row{display:flex;gap:12px;flex-wrap:wrap}
-.col{flex:1 1 260px}
-label{font-size:.9rem;color:var(--muted)}
+.row{display:flex;gap:12px;flex-wrap:wrap} .col{flex:1 1 260px} label{font-size:.9rem;color:var(--muted)}
 input[type=time]{padding:8px 10px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--fg);font-size:1rem}
 button{padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.04));cursor:pointer;color:var(--fg)}
-button.primary{background:linear-gradient(180deg, var(--acc), #2b58e6); color:white; border:none}
-button.ok{background:linear-gradient(180deg, var(--acc2), #0f9d7a); color:white; border:none}
-button.ghost{opacity:.9;background:transparent;border:1px dashed var(--border)}
-button:active{transform:translateY(1px)}
-.badge{font-size:.75rem;color:var(--muted)}
-.list{margin:8px 0 0;padding:0;list-style:none}
+button.primary{background:linear-gradient(180deg, var(--acc), #bb1d1d); color:white; border:none}
+button.ok{background:linear-gradient(180deg, var(--acc2), #bb3b3b); color:white; border:none}
+button.ghost{opacity:.9;background:transparent;border:1px dashed var(--border)} button:active{transform:translateY(1px)}
+.badge{font-size:.75rem;color:var(--muted)} .list{margin:8px 0 0;padding:0;list-style:none}
 .item{display:grid;grid-template-columns:110px 1fr;gap:10px;padding:10px;border-bottom:1px dashed var(--border)}
-.item .time{font-variant-numeric:tabular-nums;color:var(--muted)}
-.kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;background:rgba(255,255,255,.06);padding:2px 6px;border-radius:8px;border:1px solid var(--border)}
-hr{border:none;border-top:1px dashed var(--border);margin:14px 0}
-.timer{display:flex;align-items:center;gap:12px;margin-top:8px}
-.timer .big{font-size:2rem;font-variant-numeric:tabular-nums}
-.phase{padding:4px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.small{font-size:.88rem;color:var(--muted)}
-footer{opacity:.7;margin-top:12px;font-size:.85rem;color:var(--muted)}
-.toggle{display:flex;align-items:center;gap:8px}
+.item .time{font-variant-numeric:tabular-nums;color:var(--muted)} .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;background:rgba(255,255,255,.06);padding:2px 6px;border-radius:8px;border:1px solid var(--border)}
+hr{border:none;border-top:1px dashed var(--border);margin:14px 0} .timer{display:flex;align-items:center;gap:12px;margin-top:8px}
+.timer .big{font-size:2rem;font-variant-numeric:tabular-nums} .phase{padding:4px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px} .small{font-size:.88rem;color:var(--muted)}
+footer{opacity:.7;margin-top:12px;font-size:.85rem;color:var(--muted)} .toggle{display:flex;align-items:center;gap:8px}
 .switch{position:relative;width:46px;height:26px;background:var(--border);border-radius:16px;cursor:pointer}
 .switch:after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:white;transition:.2s}
-input[type=checkbox]{display:none}
-input[type=checkbox]:checked + .switch{background:linear-gradient(90deg,var(--acc2),var(--acc))}
-input[type=checkbox]:checked + .switch:after{left:23px}
-.note{background:rgba(255,255,255,.08);border:1px solid var(--border);padding:8px 10px;border-radius:10px}
+input[type=checkbox]{display:none} input[type=checkbox]:checked + .switch{background:linear-gradient(90deg,var(--acc2),var(--acc))}
+input[type=checkbox]:checked + .switch:after{left:23px} .note{background:rgba(255,255,255,.06);border:1px solid var(--border);padding:8px 10px;border-radius:10px}
+.hero{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--border)} .caption{font-size:.85rem;color:var(--muted);margin-top:6px}
 </style>
 </head>
 <body>
 <div class="container">
   <div class="header">
-    <h1>플라톤 독서 루틴 · 4시간 사이클</h1>
+    <h1>독서 사이클링 · <span style="color:var(--acc)">레드 테마</span></h1>
     <div class="toggle">
       <label class="small">단계 알림</label>
-      <input id="notif" type="checkbox">
-      <div class="switch" id="notifSwitch" title="브라우저 알림 사용(허용 필요)"></div>
+      <input id="notif" type="checkbox"><div class="switch" id="notifSwitch"></div>
       <label class="small">비프음</label>
-      <input id="beep" type="checkbox" checked>
-      <div class="switch" id="beepSwitch" title="단계 전환 시 비프음"></div>
+      <input id="beep" type="checkbox" checked><div class="switch" id="beepSwitch"></div>
     </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px">
+    <img src="assets/cat-reading.jpg" alt="고양이의 야간 독서" class="hero">
+    <div class="caption">오늘의 독서 코치 🐱: “사이클 한 바퀴, 그리고 또 한 바퀴.”</div>
   </div>
 
   <div class="row">
@@ -79,7 +67,7 @@ input[type=checkbox]:checked + .switch:after{left:23px}
         <button type="button" class="ghost" id="gen">시간표 생성/갱신</button>
         <button type="button" id="export">시간표 복사</button>
       </div>
-      <div class="note small" style="margin-top:10px">팁: 이 페이지를 홈 화면에 추가하면 앱처럼 사용할 수 있습니다.</div>
+      <div class="note small" style="margin-top:10px">이 페이지는 레드 테마 & 오프라인(PWA) 지원입니다.</div>
     </div>
   </div>
 
@@ -118,7 +106,7 @@ input[type=checkbox]:checked + .switch:after{left:23px}
     </div>
   </div>
 
-  <footer>© 플라톤 루틴 — 로컬·오프라인 지원(PWA)</footer>
+  <footer>© 독서 사이클링 — 레드 테마 & 오프라인(PWA)</footer>
 </div>
 
 <script>
@@ -133,133 +121,63 @@ const beepChk=$("#beep"), beepSwitch=$("#beepSwitch");
 let audioCtx=null;
 function beep(){
   if(!beepChk.checked) return;
-  try{
-    if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
-    const o = audioCtx.createOscillator();
-    const g = audioCtx.createGain();
-    o.frequency.value=880;
-    g.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+  try{ if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
+    o.frequency.value=880; g.gain.setValueAtTime(0.0001, audioCtx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime+0.01);
     g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+0.25);
-    o.connect(g); g.connect(audioCtx.destination);
-    o.start(); o.stop(audioCtx.currentTime+0.26);
+    o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime+0.26);
   }catch(e){}
 }
 function notify(title, body){
-  if(!notifChk.checked) return;
-  if(!("Notification" in window)) return;
-  if(Notification.permission==="granted"){
-    new Notification(title,{body});
-  }else if(Notification.permission!=="denied"){
-    Notification.requestPermission().then(p=>{ if(p==="granted") new Notification(title,{body}); });
-  }
+  if(!notifChk.checked) return; if(!("Notification" in window)) return;
+  if(Notification.permission==="granted") new Notification(title,{body});
+  else if(Notification.permission!=="denied") Notification.requestPermission().then(p=>{ if(p==="granted") new Notification(title,{body}); });
 }
-function fmt(n){return String(n).padStart(2,"0");}
-function addMin(d,m){const x=new Date(d); x.setMinutes(x.getMinutes()+m); return x;}
-function hhmm(d){return fmt(d.getHours())+":"+fmt(d.getMinutes());}
-function stamp(){ const d=new Date(); return d.toLocaleString(); }
+function fmt(n){return String(n).padStart(2,"0");} function addMin(d,m){const x=new Date(d); x.setMinutes(x.getMinutes()+m); return x;}
+function hhmm(d){return fmt(d.getHours())+":"+fmt(d.getMinutes());} function stamp(){ const d=new Date(); return d.toLocaleString(); }
 
-const PLAN=[
-  ["온램프",6],
-  ["사이클 1 읽기",25],["사이클 1 카드",5],["사이클 1 휴식",5],
-  ["사이클 2 읽기",25],["사이클 2 카드",5],["사이클 2 휴식",5],
-  ["사이클 3 읽기",25],["사이클 3 카드",5],["사이클 3 휴식",5],
-  ["인터미션",12],
-  ["사이클 4 읽기",25],["사이클 4 카드",5],["사이클 4 휴식",5],
-  ["사이클 5 읽기",25],["사이클 5 카드",5],["사이클 5 휴식",5],
-  ["사이클 6 읽기(마지막)",25],["사이클 6 카드",5],["사이클 6 휴식",5],
-  ["쿨다운",12]
-];
+const PLAN=[["온램프",6],["사이클 1 읽기",25],["사이클 1 카드",5],["사이클 1 휴식",5],
+["사이클 2 읽기",25],["사이클 2 카드",5],["사이클 2 휴식",5],["사이클 3 읽기",25],["사이클 3 카드",5],["사이클 3 휴식",5],
+["인터미션",12],["사이클 4 읽기",25],["사이클 4 카드",5],["사이클 4 휴식",5],["사이클 5 읽기",25],["사이클 5 카드",5],["사이클 5 휴식",5],
+["사이클 6 읽기(마지막)",25],["사이클 6 카드",5],["사이클 6 휴식",5],["쿨다운",12]];
 
 function buildSchedule(){
   const [h,m]=startInput.value.split(":").map(Number);
   const start=new Date(); start.setHours(h,m,0,0);
   todayEl.textContent="오늘: "+start.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"})+" · 시작 "+startInput.value;
-  scheduleEl.innerHTML="";
-  let t=start;
-  PLAN.forEach(([label,dur])=>{
-    const t2=addMin(t,dur);
+  scheduleEl.innerHTML=""; let t=start;
+  PLAN.forEach(([label,dur])=>{ const t2=addMin(t,dur);
     const li=document.createElement("li"); li.className="item";
-    const btn=document.createElement("button");
-    btn.type="button"; btn.className="ghost startPart";
+    const btn=document.createElement("button"); btn.type="button"; btn.className="ghost startPart";
     btn.textContent=label; btn.dataset.label=label; btn.dataset.dur=dur;
     const time=document.createElement("div"); time.className="time"; time.textContent=`${hhmm(t)}–${hhmm(t2)}`;
     const task=document.createElement("div"); task.appendChild(btn);
-    li.appendChild(time); li.appendChild(task);
-    scheduleEl.appendChild(li);
-    t=t2;
-  });
+    li.appendChild(time); li.appendChild(task); scheduleEl.appendChild(li); t=t2; });
   scheduleEl.querySelectorAll(".startPart").forEach(b=>b.addEventListener("click", ()=>startPart(b.dataset.label, parseInt(b.dataset.dur,10)) ));
-  statusEl.textContent="시간표를 생성했습니다.";
-  localStorage.setItem("plato_start", startInput.value);
+  statusEl.textContent="시간표를 생성했습니다."; localStorage.setItem("reading_cycle_start", startInput.value);
 }
 
 let timer=null, endAt=null, queue=[], paused=false, remaining=0;
-function setPhase(name, secs){
-  phaseEl.textContent=name;
-  endAt=Date.now()+secs*1000;
-  remaining=secs*1000; paused=false;
-  if(timer) clearInterval(timer);
-  tick();
-  timer=setInterval(tick,200);
-}
-function tick(){
-  if(paused){ clockEl.textContent = msToClock(remaining); return; }
-  const left=endAt-Date.now();
-  if(left<=0){
-    clockEl.textContent="00:00"; beep();
-    if(queue.length){
-      const nxt=queue.shift();
-      notify("다음 단계", `${nxt.title} 시작`);
-      setPhase(nxt.title, nxt.secs);
-      statusEl.textContent=`${stamp()} · ${nxt.title} 시작`;
-    }else{
-      phaseEl.textContent="완료"; statusEl.textContent=`${stamp()} · 타이머 완료`;
-      notify("완료","모든 단계가 끝났습니다."); clearInterval(timer); timer=null;
-    }
-    return;
-  }
+function setPhase(name, secs){ phaseEl.textContent=name; endAt=Date.now()+secs*1000; remaining=secs*1000; paused=false; if(timer) clearInterval(timer); tick(); timer=setInterval(tick,200); }
+function tick(){ if(paused){ clockEl.textContent = msToClock(remaining); return; } const left=endAt-Date.now();
+  if(left<=0){ clockEl.textContent="00:00"; beep(); if(queue.length){ const nxt=queue.shift(); notify("다음 단계",`${nxt.title} 시작`); setPhase(nxt.title, nxt.secs); statusEl.textContent=`${stamp()} · ${nxt.title} 시작`; } else { phaseEl.textContent="완료"; statusEl.textContent=`${stamp()} · 타이머 완료`; notify("완료","모든 단계가 끝났습니다."); clearInterval(timer); timer=null; } return; }
   clockEl.textContent = msToClock(left);
 }
 function msToClock(ms){ const s=Math.ceil(ms/1000); const mm=Math.floor(s/60), ss=s%60; return fmt(mm)+":"+fmt(ss); }
-function startCycle(){
-  queue=[{title:"읽기",secs:25*60},{title:"카드",secs:5*60},{title:"휴식",secs:5*60}];
-  const first=queue.shift(); notify("사이클 시작","읽기 25분 시작"); setPhase(first.title, first.secs);
-  statusEl.textContent=`${stamp()} · 사이클(25/5/5) 시작`;
-}
-function startPart(label, dur){
-  queue=[]; setPhase(label, dur*60);
-  notify(label+" 시작","타이머가 시작되었습니다."); statusEl.textContent=`${stamp()} · ${label} 시작`;
-}
+function startCycle(){ queue=[{title:"읽기",secs:25*60},{title:"카드",secs:5*60},{title:"휴식",secs:5*60}]; const first=queue.shift(); notify("사이클 시작","읽기 25분 시작"); setPhase(first.title, first.secs); statusEl.textContent=`${stamp()} · 사이클(25/5/5) 시작`; }
+function startPart(label, dur){ queue=[]; setPhase(label, dur*60); notify(label+" 시작","타이머가 시작되었습니다."); statusEl.textContent=`${stamp()} · ${label} 시작`; }
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  const saved=localStorage.getItem("plato_start"); if(saved) startInput.value=saved;
+document.addEventListener("DOMContentLoaded", ()=>{ const saved=localStorage.getItem("reading_cycle_start"); if(saved) startInput.value=saved;
   buildSchedule(); clockEl.textContent="00:00";
-  todayEl.textContent=new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
-  document.getElementById("gen").addEventListener("click", buildSchedule);
-  startInput.addEventListener("change", buildSchedule);
-  exportBtn.addEventListener("click", ()=>{
-    let text="플라톤 독서 시간표 ("+startInput.value+" 시작)\n";
-    document.querySelectorAll(".item").forEach(r=>{
-      const time=r.querySelector(".time").textContent;
-      const task=r.querySelector(".startPart").textContent.trim();
-      text += `- ${time}  ${task}\n`;
-    });
-    navigator.clipboard.writeText(text).then(()=> statusEl.textContent="시간표를 클립보드에 복사했습니다.");
-  });
+  document.getElementById("gen").addEventListener("click", buildSchedule); startInput.addEventListener("change", buildSchedule);
+  document.getElementById("export").addEventListener("click", ()=>{ let text="독서 사이클링 시간표 ("+startInput.value+" 시작)\n"; document.querySelectorAll(".item").forEach(r=>{ const time=r.querySelector(".time").textContent; const task=r.querySelector(".startPart").textContent.trim(); text += `- ${time}  ${task}\n`; }); navigator.clipboard.writeText(text).then(()=> statusEl.textContent="시간표를 클립보드에 복사했습니다."); });
   document.getElementById("startCycle").addEventListener("click", startCycle);
-  document.getElementById("pause").addEventListener("click", ()=>{
-    if(!timer) return;
-    if(!paused){ paused=true; remaining=endAt-Date.now(); statusEl.textContent="일시정지"; }
-    else { paused=false; endAt=Date.now()+remaining; statusEl.textContent="재개"; }
-  });
+  document.getElementById("pause").addEventListener("click", ()=>{ if(!timer) return; if(!paused){ paused=true; remaining=endAt-Date.now(); statusEl.textContent="일시정지"; } else { paused=false; endAt=Date.now()+remaining; statusEl.textContent="재개"; } });
   document.getElementById("reset").addEventListener("click", ()=>{ if(timer) clearInterval(timer); timer=null; queue=[]; endAt=null; paused=false; remaining=0; phaseEl.textContent="대기"; clockEl.textContent="00:00"; statusEl.textContent="리셋됨"; });
   document.getElementById("notifSwitch").addEventListener("click", ()=>{ notifChk.checked=!notifChk.checked; if(notifChk.checked && "Notification" in window) Notification.requestPermission(); });
   document.getElementById("beepSwitch").addEventListener("click", ()=>{ beepChk.checked=!beepChk.checked; if(beepChk.checked) beep(); });
-  // PWA: register service worker
-  if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('./sw.js').catch(()=>{});
-  }
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('./sw.js').catch(()=>{}); }
 });
 </script>
 </body>

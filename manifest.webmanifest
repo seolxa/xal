@@ -1,10 +1,10 @@
 {
-  "name": "플라톤 독서 루틴",
-  "short_name": "플라톤 루틴",
-  "start_url": ".",
+  "name": "독서 사이클링",
+  "short_name": "사이클링",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#0f1220",
-  "theme_color": "#0f1220",
+  "background_color": "#1a0f10",
+  "theme_color": "#d32f2f",
   "icons": [
     {
       "src": "icon-192.png",
